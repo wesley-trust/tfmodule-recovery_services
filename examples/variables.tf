@@ -103,6 +103,12 @@ variable "resource_network_interface_count" {
   default     = 1
 }
 
+variable "provision_key_vault" {
+  description = "Whether to provision a key vault"
+  type        = bool
+  default     = false
+}
+
 variable "provision_public_load_balancer" {
   description = "Whether to provision a public load balancer"
   type        = bool
