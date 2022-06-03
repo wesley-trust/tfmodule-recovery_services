@@ -13,4 +13,5 @@ module "compute" {
   resource_dns_servers      = lookup(var.resource_dns_servers, each.value, null)
   resource_network_role     = var.resource_network_role
   operating_system_platform = var.operating_system_platform
+  provision_key_vault       = var.provision_key_vault
 }
