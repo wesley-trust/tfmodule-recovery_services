@@ -10,7 +10,7 @@ import (
 )
 
 // Soft delete currently prevents successful test runs
-/* func TestApplySingleInstanceSingleRegion_Windows(t *testing.T) {
+func TestApplySingleInstanceSingleRegion_Windows(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
@@ -53,7 +53,10 @@ import (
 
 	// Run `terraform init` and `terraform apply`. Fail the test if there are any errors.
 	terraform.InitAndApply(t, terraformOptions)
-} */
+
+	// Run `terraform apply` a second time, to disable soft delete. Fail the test if there are any errors.
+	terraform.Apply(t, terraformOptions)
+}
 
 // Linux VMs are currently timing out when applying the backup, to be investigated
 /* func TestApplySingleInstanceSingleRegion_Linux(t *testing.T) {
