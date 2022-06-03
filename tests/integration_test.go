@@ -49,13 +49,17 @@ func TestApplySingleInstanceSingleRegion_Windows(t *testing.T) {
 	})
 
 	// At the end of the test, run `terraform destroy` to clean up any resources that were created
+	defer terraform.DestroyE(t, terraformOptions)
+
+	// At the end of the test, run `terraform destroy` again, as replication delays can cause the initial destroy to fail
 	defer terraform.Destroy(t, terraformOptions)
 
 	// Run `terraform init` and `terraform apply`. Fail the test if there are any errors.
 	terraform.InitAndApply(t, terraformOptions)
 
-	// Run `terraform apply` a second time, to disable soft delete. Fail the test if there are any errors.
+	// Run `terraform apply` again, to ensure soft delete is disabled, as destroy will fail otherwise. Fail the test if there are any errors.
 	terraform.Apply(t, terraformOptions)
+
 }
 
 // Linux VMs are currently timing out when applying the backup, to be investigated
