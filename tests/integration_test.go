@@ -9,7 +9,6 @@ import (
 	test_structure "github.com/gruntwork-io/terratest/modules/test-structure"
 )
 
-// Soft delete currently prevents successful test runs
 func TestApplySingleInstanceSingleRegion_Windows(t *testing.T) {
 	t.Parallel()
 
