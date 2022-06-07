@@ -49,7 +49,7 @@ func TestApplySingleInstanceSingleRegion_Windows(t *testing.T) {
 	})
 
 	// At the end of the test, run `terraform destroy` to clean up any resources that were created
-	defer terraform.Destroy(Et, terraformOptions)
+	defer terraform.DestroyE(t, terraformOptions)
 
 	// At the end of the test, run `terraform destroy` again, as replication delays can cause the initial destroy to fail
 	defer terraform.Destroy(t, terraformOptions)
