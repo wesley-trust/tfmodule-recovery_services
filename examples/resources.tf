@@ -9,4 +9,5 @@ module "recovery_services" {
   resource_name                               = local.resource_name
   resource_recovery_services_instance_count   = var.resource_instance_count
   resource_recovery_services_virtual_machines = module.compute[each.value]
+  resource_delete_protection_enabled          = var.resource_delete_protection_enabled
 }

@@ -5,5 +5,5 @@ resource "azurerm_recovery_services_vault" "recovery_services_vault" {
   resource_group_name = module.resource_group.name
   sku                 = "Standard"
 
-  soft_delete_enabled = false
+  soft_delete_enabled = var.resource_delete_protection_enabled == false ? false : true
 }

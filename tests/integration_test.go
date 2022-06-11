@@ -39,11 +39,12 @@ func TestApplySingleInstanceSingleRegion_Windows(t *testing.T) {
 
 		// Variables to pass to the Terraform code using -var options
 		Vars: map[string]interface{}{
-			"service_deployment":        serviceDeployment,
-			"resource_instance_count":   1,
-			"service_location":          locations,
-			"operating_system_platform": operatingSystemPlatform,
-			"resource_vm_sku":           resourceVmSku,
+			"service_deployment":                 serviceDeployment,
+			"resource_instance_count":            1,
+			"service_location":                   locations,
+			"operating_system_platform":          operatingSystemPlatform,
+			"resource_vm_sku":                    resourceVmSku,
+			"resource_delete_protection_enabled": false,
 		},
 	})
 
