@@ -114,3 +114,8 @@ variable "provision_public_load_balancer" {
   type        = bool
   default     = false
 }
+
+variable "resource_delete_protection_enabled" {
+  description = "Whether 'soft delete' protection is enabled for backups"
+  type        = bool
+}
