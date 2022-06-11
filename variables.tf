@@ -34,3 +34,9 @@ variable "resource_recovery_services_virtual_machines" {
   description = "Desired virtual machines of the provisioned resources to backup"
   type        = any
 }
+
+variable "resource_delete_protection_enabled" {
+  description = "Whether 'soft delete' protection is enabled for backups"
+  type        = bool
+  default     = true
+}
