@@ -9,7 +9,7 @@ import (
 	test_structure "github.com/gruntwork-io/terratest/modules/test-structure"
 )
 
-func TestApplySingleInstanceSingleRegion_Windows(t *testing.T) {
+func TestApplySingleInstanceSingleRegion_Windows_NoBackup(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
@@ -23,7 +23,7 @@ func TestApplySingleInstanceSingleRegion_Windows(t *testing.T) {
 
 	// Generate a random deployment name for the test to prevent a naming conflict
 	uniqueID := random.UniqueId()
-	testREF := "SingleInstanceSingleRegion_Windows"
+	testREF := "SingleInstanceSingleRegion_Windows_NoBackup"
 	serviceDeployment := testREF + "-" + uniqueID
 	operatingSystemPlatform := "Windows"
 	resourceVmSku := "2022-datacenter-smalldisk-g2"
@@ -45,6 +45,7 @@ func TestApplySingleInstanceSingleRegion_Windows(t *testing.T) {
 			"operating_system_platform":          operatingSystemPlatform,
 			"resource_vm_sku":                    resourceVmSku,
 			"resource_delete_protection_enabled": false,
+			"resource_automatic_backups_enabled": false,
 		},
 	})
 
