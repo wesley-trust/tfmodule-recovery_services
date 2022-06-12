@@ -53,7 +53,7 @@ func TestPlanSingleInstanceSingleRegion_Windows_NoBackup(t *testing.T) {
 	terraform.InitAndPlan(t, terraformOptions)
 }
 
-func TestPlanSingleInstanceSingleRegion_Linux_NoBackup(t *testing.T) {
+/* func TestPlanSingleInstanceSingleRegion_Linux_NoBackup(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
@@ -85,6 +85,7 @@ func TestPlanSingleInstanceSingleRegion_Linux_NoBackup(t *testing.T) {
 			"resource_instance_count":            1,
 			"service_location":                   locations,
 			"resource_delete_protection_enabled": false,
+			"resource_automatic_backups_enabled": false,
 		},
 	})
 
@@ -130,4 +131,4 @@ func TestPlanMultiInstanceMultiRegion(t *testing.T) {
 
 	// Run `terraform init` and `terraform plan`. Fail the test if there are any errors.
 	terraform.InitAndPlan(t, terraformOptions)
-}
+} */
