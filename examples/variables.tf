@@ -119,3 +119,8 @@ variable "resource_delete_protection_enabled" {
   description = "Whether 'soft delete' protection is enabled for backups"
   type        = bool
 }
+
+variable "resource_automatic_backups_enabled" {
+  description = "Whether to automatically backup specified instances"
+  type        = bool
+}

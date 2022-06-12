@@ -40,3 +40,9 @@ variable "resource_delete_protection_enabled" {
   type        = bool
   default     = true
 }
+
+variable "resource_automatic_backups_enabled" {
+  description = "Whether to automatically backup specified instances"
+  type        = bool
+  default     = true
+}
