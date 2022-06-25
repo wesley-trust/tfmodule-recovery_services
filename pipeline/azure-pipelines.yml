@@ -13,5 +13,14 @@ pr:
     include:
     - main
 
+# Trigger for regression test dependencies
+resources:
+  pipelines:
+  - pipeline: Compute
+    source: tfmodule-compute
+    trigger:    
+      stages:
+      - Regression
+
 extends:
   template: ./Shared/azure-pipelines.yml
