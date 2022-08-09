@@ -17,7 +17,7 @@ pr:
 resources:
   pipelines:
   - pipeline: Compute
-    source: tfmodule-compute
+    source: ENV-P;REF-latest; tfmodule-compute
     trigger:    
       stages:
       - Regression
